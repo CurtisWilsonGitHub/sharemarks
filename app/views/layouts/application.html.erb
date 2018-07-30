@@ -14,9 +14,9 @@
         <span class="navbar-brand"> Sharemarks </span>
         <ul class="navbar-nav ml-auto">
           <% if user_signed_in? %>
-            <span class="navbar-text">signed in as: <strong><%= current_user.email %></strong></span>
-            <li class="nav-item"><%= link_to 'edit profile', users_show_url(:id => current_user), class:'nav-link' %></li>
-            <li class="nav-item"><%= link_to 'sign out', destroy_user_session_path, method: :delete, class:'nav-link' %></li>
+            <li class="nav-item"><%= link_to 'All Topics', topics_url, class:'nav-link' %></li>
+            <li class="nav-item"><%= link_to 'Edit Profile', users_show_url(:id => current_user), class:'nav-link' %></li>
+            <li class="nav-item"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class:'nav-link' %></li>
           <% else %>
             <li class="nav-item"><%= link_to "Sign Up", new_user_registration_path, class:'nav-link' %></li>
             <li class="nav-item"><%= link_to "Sign In", new_user_session_path, class:'nav-link' %></li>
