@@ -40,7 +40,19 @@ class TopicsController < ApplicationController
         flash.now[:alert] = "There was an error saving the topic. Please try again"
         render :edit
     end
-end
+  end
+
+  def destroy
+    @topic  = Topic.find(params[:id])
+
+    if @topic.destroy
+      flash[:notice]="\"#{@topic.title}\"was deleted."
+      redirect_to topics_path
+    else
+      flash[:alert]="There was an error deleting the topic. Please try again."
+      render :show
+    end
+  end
 
   private
   def topic_params
