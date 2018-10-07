@@ -22,6 +22,7 @@ end
       redirect_to @topic
     else
       flash.now[:alert]="There was an error saving the topic. Please try again."
+      redirect_to @topic
     end
   end
 

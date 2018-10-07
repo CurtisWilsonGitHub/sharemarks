@@ -4,7 +4,7 @@
     <% @topic.bookmarks.each_slice(3) do |bookmarks| %>
       <div class="row">
         <% bookmarks.each do |b|%>
-          <div class="col-sm">
+          <div class="col-sm bookmark-box">
             <%= link_to b.url, topic_bookmark_path(@topic, b)%>
           </div>
         <% end %>

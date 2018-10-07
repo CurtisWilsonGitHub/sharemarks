@@ -15,7 +15,7 @@
         <ul class="navbar-nav ml-auto">
           <% if user_signed_in? %>
             <li class="nav-item"><%= link_to 'All Topics', topics_url, class:'nav-link' %></li>
-            <li class="nav-item"><%= link_to 'Edit Profile', users_show_url(:id => current_user), class:'nav-link' %></li>
+            <li class="nav-item"><%= link_to 'Profile', user_url(:id => current_user), class:'nav-link' %></li>
             <li class="nav-item"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class:'nav-link' %></li>
           <% else %>
             <li class="nav-item"><%= link_to "Sign Up", new_user_registration_path, class:'nav-link' %></li>
